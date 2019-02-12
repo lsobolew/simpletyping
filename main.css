@@ -123,11 +123,23 @@
   height: 64px;
   width: 64px;
   background-image: url(images/world/treasure-closed.png);
+  bottom: 61px;
+  z-index: 1;
 }
 #world > .ground > .object.treasure-opened {
   height: 64px;
   width: 64px;
   background-image: url(images/world/treasure-opened.png);
+  bottom: 61px;
+  z-index: 1;
+}
+
+#world > .ground > .object.house {
+  height: 300px;
+  width: 250px;
+  background-image: url(images/world/house.png);
+  bottom: 15px;
+  z-index: 1;
 }
 
 #main-character {

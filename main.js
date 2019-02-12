@@ -93,6 +93,7 @@ function generateWorld() {
     fields[g]['letter'] = '';
     g++;
   }
+  fields[0]['object'] = 'house';
   for(i = 0; i < string.length; i++) {
     if(string[i] === ' ') {
       fields[g] = {};
