@@ -1,0 +1,278 @@
+#canvas {
+  width: calc(70px * 8);
+  margin: auto;
+  position: relative;
+  height: calc(70px * 8);
+  border: 1px solid black;
+  background: url(images/world/BG.png);
+  background-size: cover;
+  overflow: hidden;
+}
+
+#world {
+  display: grid;
+  grid-template-rows: repeat(auto-fill, 70px);
+  grid-auto-flow: column;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transform: translateX(0);
+  transition: transform calc(.03333s * 10) linear;
+}
+
+#world > .ground,
+#world > .ground-left,
+#world > .ground-right {
+  height: 70px;
+  width: 70px;
+  background-image: url(images/world/ground.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  position: relative;
+}
+#world > .ground-left {
+  background-image: url(images/world/ground-left.png);
+}
+#world > .ground-right {
+  background-image: url(images/world/ground-right.png);
+}
+#world > .water {
+  height: 70px;
+  width: 70px;
+  background-image: url(images/world/water.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: bottom;
+}
+
+#world .letter {
+  color: #fff;
+  font-size: 30px;
+  font-family: arial;
+  text-shadow: 1px 1px 1px #000;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  line-height: 1.4;
+  text-align: center;
+}
+
+#world > .ground > .object {
+  height: 35px;
+  width: 35px;
+  background-image: url(images/world/objects/mushroom.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom center;
+  position: absolute;
+  bottom: 70px;
+  left: 0;
+}
+#world > .ground > .object.bush-1 {
+  background-image: url(images/world/objects/bush_1.png);
+}
+#world > .ground > .object.bush-2 {
+  background-image: url(images/world/objects/bush_2.png);
+}
+#world > .ground > .object.bush-3 {
+  background-image: url(images/world/objects/bush_3.png);
+}
+#world > .ground > .object.bush-4 {
+  background-image: url(images/world/objects/bush_4.png);
+}
+#world > .ground > .object.crate {
+  height: 70px;
+  width: 70px;
+  background-image: url(images/world/objects/crate.png);
+}
+#world > .ground > .object.mushroom-1 {
+  background-image: url(images/world/objects/mushroom_1.png);
+}
+#world > .ground > .object.mushroom-2 {
+  background-image: url(images/world/objects/mushroom_2.png);
+}
+#world > .ground > .object.sign-1 {
+  background-image: url(images/world/objects/sign_1.png);
+}
+#world > .ground > .object.sign-2 {
+  background-image: url(images/world/objects/sign_2.png);
+}
+#world > .ground > .object.stone {
+  background-image: url(images/world/objects/stone.png);
+}
+#world > .ground > .object.tree-1 {
+  height: 70px;
+  width: 70px;
+  background-image: url(images/world/objects/tree_1.png);
+}
+#world > .ground > .object.tree-2 {
+  height: 140px;
+  width: 140px;
+  background-image: url(images/world/objects/tree_2.png);
+}
+#world > .ground > .object.tree-3 {
+  height: 140px;
+  width: 140px;
+  background-image: url(images/world/objects/tree_3.png);
+}
+
+
+#world > .ground > .object.treasure-closed {
+  height: 64px;
+  width: 64px;
+  background-image: url(images/world/treasure-closed.png);
+}
+#world > .ground > .object.treasure-opened {
+  height: 64px;
+  width: 64px;
+  background-image: url(images/world/treasure-opened.png);
+}
+
+#main-character {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  left: 50%;
+  bottom: 70px;
+  pointer-events: none;
+}
+
+#main-character .frame {
+  background-size: cover;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+
+#main-character[data-state="idle"][data-frame="1"] .frame:nth-child(1) {
+  background-image: url(images/character/idle_01.png);
+}
+#main-character[data-state="idle"][data-frame="2"] .frame:nth-child(2) {
+  background-image: url(images/character/idle_02.png);
+}
+#main-character[data-state="idle"][data-frame="3"] .frame:nth-child(3) {
+  background-image: url(images/character/idle_03.png);
+}
+#main-character[data-state="idle"][data-frame="4"] .frame:nth-child(4) {
+  background-image: url(images/character/idle_04.png);
+}
+#main-character[data-state="idle"][data-frame="5"] .frame:nth-child(5) {
+  background-image: url(images/character/idle_05.png);
+}
+#main-character[data-state="idle"][data-frame="6"] .frame:nth-child(6) {
+  background-image: url(images/character/idle_06.png);
+}
+#main-character[data-state="idle"][data-frame="7"] .frame:nth-child(7) {
+  background-image: url(images/character/idle_07.png);
+}
+#main-character[data-state="idle"][data-frame="8"] .frame:nth-child(8) {
+  background-image: url(images/character/idle_08.png);
+}
+#main-character[data-state="idle"][data-frame="9"] .frame:nth-child(9) {
+  background-image: url(images/character/idle_09.png);
+}
+#main-character[data-state="idle"][data-frame="10"] .frame:nth-child(10) {
+  background-image: url(images/character/idle_10.png);
+}
+
+
+#main-character[data-state="jump"][data-frame="1"] .frame:nth-child(1) {
+  background-image: url(images/character/jump_01.png);
+  transform: translateY(0px);
+}
+#main-character[data-state="jump"][data-frame="2"] .frame:nth-child(2) {
+  background-image: url(images/character/jump_02.png);
+  transform: translateY(-4px);
+}
+#main-character[data-state="jump"][data-frame="3"] .frame:nth-child(3) {
+  background-image: url(images/character/jump_03.png);
+  transform: translateY(-8px);
+}
+#main-character[data-state="jump"][data-frame="4"] .frame:nth-child(4) {
+  background-image: url(images/character/jump_04.png);
+  transform: translateY(-12px);
+}
+#main-character[data-state="jump"][data-frame="5"] .frame:nth-child(5) {
+  background-image: url(images/character/jump_05.png);
+  transform: translateY(-12px);
+}
+#main-character[data-state="jump"][data-frame="6"] .frame:nth-child(6) {
+  background-image: url(images/character/jump_06.png);
+  transform: translateY(-8px);
+}
+#main-character[data-state="jump"][data-frame="7"] .frame:nth-child(7) {
+  background-image: url(images/character/jump_07.png);
+  transform: translateY(-6px);
+}
+#main-character[data-state="jump"][data-frame="8"] .frame:nth-child(8) {
+  background-image: url(images/character/jump_08.png);
+  transform: translateY(0px);
+}
+
+#main-character[data-state="walk"][data-frame="1"] .frame:nth-child(1) {
+  background-image: url(images/character/walk_01.png);
+}
+#main-character[data-state="walk"][data-frame="2"] .frame:nth-child(2) {
+  background-image: url(images/character/walk_02.png);
+}
+#main-character[data-state="walk"][data-frame="3"] .frame:nth-child(3) {
+  background-image: url(images/character/walk_03.png);
+}
+#main-character[data-state="walk"][data-frame="4"] .frame:nth-child(4) {
+  background-image: url(images/character/walk_04.png);
+}
+#main-character[data-state="walk"][data-frame="5"] .frame:nth-child(5) {
+  background-image: url(images/character/walk_05.png);
+}
+#main-character[data-state="walk"][data-frame="6"] .frame:nth-child(6) {
+  background-image: url(images/character/walk_06.png);
+}
+#main-character[data-state="walk"][data-frame="7"] .frame:nth-child(7) {
+  background-image: url(images/character/walk_07.png);
+}
+#main-character[data-state="walk"][data-frame="8"] .frame:nth-child(8) {
+  background-image: url(images/character/walk_08.png);
+}
+#main-character[data-state="walk"][data-frame="9"] .frame:nth-child(9) {
+  background-image: url(images/character/walk_09.png);
+}
+#main-character[data-state="walk"][data-frame="10"] .frame:nth-child(10) {
+  background-image: url(images/character/walk_10.png);
+}
+
+
+#main-character[data-frame="1"] .frame:nth-child(1) {
+  opacity: 1;
+}
+#main-character[data-frame="2"] .frame:nth-child(2) {
+  opacity: 1;
+}
+#main-character[data-frame="3"] .frame:nth-child(3) {
+  opacity: 1;
+}
+#main-character[data-frame="4"] .frame:nth-child(4) {
+  opacity: 1;
+}
+#main-character[data-frame="5"] .frame:nth-child(5) {
+  opacity: 1;
+}
+#main-character[data-frame="6"] .frame:nth-child(6) {
+  opacity: 1;
+}
+#main-character[data-frame="7"] .frame:nth-child(7) {
+  opacity: 1;
+}
+#main-character[data-frame="8"] .frame:nth-child(8) {
+  opacity: 1;
+}
+#main-character[data-frame="9"] .frame:nth-child(9) {
+  opacity: 1;
+}
+#main-character[data-frame="10"] .frame:nth-child(10) {
+  opacity: 1;
+}
